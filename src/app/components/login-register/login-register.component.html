@@ -1,0 +1,126 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <div class="card card-stats">
+                    <div class="card-header card-header-warning card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons">login</i>
+                        </div>
+                        <h3 class="card-title">Login</h3>
+                    </div>
+                    <hr>
+                    <form class="p-1" (ngSubmit)="login()" [formGroup]="loginForm">
+                        <div class="row">
+                            <div class="col-3">
+                                <label class="leftText" for="email">Email</label>
+                            </div>
+                            <div class="col-9">
+                                <mat-form-field class="example-full-width">
+                                    <input formControlName="email" matInput id="email" placeholder="Email">
+                                </mat-form-field>
+                            </div>
+                            <div *ngIf="loginSubmit && form1.email.errors?.required" class="text-danger col-12">
+                                Required field
+                            </div>
+                            <div *ngIf="loginSubmit && form1.email.errors?.email" class="text-danger col-12">
+                                Email format not valid
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">
+                                <label class="leftText" for="password">Password</label>
+                            </div>
+                            <div class="col-9">
+                                <mat-form-field class="example-full-width">
+                                    <input formControlName="password" matInput type="password" id="password" placeholder="Password">
+                                </mat-form-field>
+                            </div>
+                            <div *ngIf="loginSubmit && form1.password.errors?.required" class="text-danger col-12">
+                                Required field
+                            </div>
+                        </div>
+                        <div class="row">
+                            <button [disabled]="dataSent" type="submit" mat-raised-button type="submit" class="mx-auto btn btn-success">
+                                Login
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="card card-stats">
+                    <div class="card-header card-header-warning card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons">group_add</i>
+                        </div>
+                        <h3 class="card-title">Sign Up</h3>
+                    </div>
+                    <hr/>
+                    <form class="p-1" (ngSubmit)="register()" [formGroup]="registerForm">
+                        <div class="row">
+                            <div class="col-3">
+                                <label class="leftText" for="name">Name</label>
+                            </div>
+                            <div class="col-9">
+                                <mat-form-field class="example-full-width">
+                                    <input formControlName="name" matInput id="name" placeholder="Full name">
+                                </mat-form-field>
+                            </div>
+                            <div *ngIf="registerSubmit && form2.name.errors?.required" class="text-danger col-12">
+                                Required field
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">
+                                <label class="leftText" for="email">Email</label>
+                            </div>
+                            <div class="col-9">
+                                <mat-form-field class="example-full-width">
+                                    <input formControlName="email" matInput id="email" placeholder="Email">
+                                </mat-form-field>
+                            </div>
+                            <div *ngIf="registerSubmit && form2.email.errors?.required" class="text-danger col-12">
+                                Required field
+                            </div>
+                            <div *ngIf="registerSubmit && form2.email.errors?.email" class="text-danger col-12">
+                                Email format not valid
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">
+                                <label class="leftText" for="password">Password</label>
+                            </div>
+                            <div class="col-9">
+                                <mat-form-field class="example-full-width">
+                                    <input formControlName="password" matInput type="password" id="password" placeholder="Password">
+                                </mat-form-field>
+                            </div>
+                            <div *ngIf="registerSubmit && form2.password.errors?.required" class="text-danger col-12">
+                                Required field
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">
+                                <label class="leftText" for="password_confirmation">Re-type Password</label>
+                            </div>
+                            <div class="col-9">
+                                <mat-form-field class="example-full-width">
+                                    <input formControlName="password_confirmation" matInput type="password" id="password_confirmation" placeholder="Password confirmation">
+                                </mat-form-field>
+                            </div>
+                            <div *ngIf="registerSubmit && form2.password_confirmation.errors?.required" class="text-danger col-12">
+                                Required field
+                            </div>
+                        </div>
+                        <div class="row">
+                            <button [disabled]="dataSent" type="submit" mat-raised-button type="submit" class="mx-auto btn btn-success">
+                                Register
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

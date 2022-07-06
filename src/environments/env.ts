@@ -1,0 +1,1 @@
+export const BACK_END_DOMAIN ="https://api.mailing.sliderlimited.com/api";
