@@ -107,7 +107,7 @@
                                         </ul>
                                     </td>
                                     <td>
-                                        <button [ngClass]="{'mat-focus-indicator pull-right mat-raised-button mat-button-base btn':true,'btn-danger':item?.verified==true,'btn-success':!item?.verified}" (click)="toggle(item?.id) ">{{getLabel(item)}}</button>
+                                        <button [disabled]="dataSent" [ngClass]="{'mat-focus-indicator pull-right mat-raised-button mat-button-base btn':true,'btn-danger':item?.verified==true,'btn-success':!item?.verified}" (click)="toggle(item?.id) ">{{getLabel(item)}}</button>
                                     </td>
                                 </tr>
                             </tbody>

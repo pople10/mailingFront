@@ -22,6 +22,8 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ManageUsersComponent } from 'app/manage-users/manage-users.component';
 import { AuthGuard } from 'app/services/guards/auth.guard';
 
+import { EditorModule } from '@tinymce/tinymce-angular';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -34,6 +36,7 @@ import { AuthGuard } from 'app/services/guards/auth.guard';
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
+    EditorModule
   ],
   declarations: [
     DashboardComponent,

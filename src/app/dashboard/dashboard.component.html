@@ -1,7 +1,10 @@
 <div class="main-content">
     <div class="container-fluid">
         <div class="row">
-
+            {{body}}
+            <div class="card">
+                <editor [(ngModel)]="body" [init]="{ plugins: 'lists link image table code help wordcount' }"></editor>
+            </div>
         </div>
     </div>
 </div>
