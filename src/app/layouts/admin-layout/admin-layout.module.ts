@@ -20,8 +20,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { LoginRegisterComponent } from 'app/components/login-register/login-register.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ManageUsersComponent } from 'app/manage-users/manage-users.component';
-import { AuthGuard } from 'app/services/guards/auth.guard';
-
+import {MatCheckboxModule} from '@angular/material/checkbox';
 import { EditorModule } from '@tinymce/tinymce-angular';
 
 @NgModule({
@@ -36,7 +35,8 @@ import { EditorModule } from '@tinymce/tinymce-angular';
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
-    EditorModule
+    EditorModule,
+    MatCheckboxModule
   ],
   declarations: [
     DashboardComponent,
