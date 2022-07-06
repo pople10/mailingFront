@@ -70,4 +70,11 @@ export class UserService {
     return [];
   }
 
+  isAdmin():boolean
+  {
+    if(this.getRole().includes("admin"))
+      return true;
+    return false;
+  }
+
 }

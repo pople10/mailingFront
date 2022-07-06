@@ -10,8 +10,7 @@ declare interface RouteInfo {
     class: string;
 }
 export const ROUTES: RouteInfo[] = [
-    { path: '/dashboard', title: 'Send mail',  icon: 'dashboard', class: '' },
-    { path: '/users', title: 'Manage Users',  icon: 'person', class: '' }
+    { path: '/dashboard', title: 'Send mail',  icon: 'dashboard', class: '' }
 ];
 
 @Component({
@@ -25,6 +24,8 @@ export class SidebarComponent implements OnInit {
   constructor(private userService:UserService,public authService:AuthService) { }
 
   ngOnInit() {
+    if(this.userService.isAdmin())
+        ROUTES.push({ path: '/users', title: 'Manage Users',  icon: 'person', class: '' });
     this.menuItems = ROUTES.filter(menuItem => menuItem);
   }
   isMobileMenu() {
