@@ -75,12 +75,32 @@
                         </div>
                     </div>
                 </form>
-                <div class="col-md-12">
+                <div class="col-md-12" style="margin-bottom: 20px;">
                     <editor [(ngModel)]="body" [init]="{ plugins: 'lists link image table code help wordcount' }"></editor>
                 </div>
 
                 <div class="mt-4 mb-4"></div>
-
+                <div class="col-md-4">
+                    <mat-form-field class="example-full-width">
+                        <input [(ngModel)]="limit" matInput placeholder="Email limit for sending" type="number">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                    <mat-form-field class="example-full-width">
+                        <input [(ngModel)]="timeout" matInput placeholder="Time between batches in seconds" type="number">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Choose a role</mat-label>
+                        <mat-select [(ngModel)]="limitType">
+                            <mat-option value="emailBcc">BCC</mat-option>
+                            <mat-option value="emailRecipient">To</mat-option>
+                            <mat-option value="emailCc">CC</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="mt-4 mb-4"></div>
                 <div class="col-md-12">
                     <mat-checkbox class="example-margin" (change)="toggleConf($event)">Do you want to add custom configuration?</mat-checkbox>
                 </div>
@@ -112,7 +132,7 @@
                     </div>
                 </div>
 
-                <button [disabled]="dataSent" mat-raised-button (click)="send()" class="mx-auto btn btn-danger pull-right">Send mail</button>
+                <button id="send" [disabled]="dataSent" mat-raised-button (click)="send()" class="mx-auto btn btn-danger pull-right">Send mail</button>
                 <div class="clearfix"></div>
             </div>
         </div>
